@@ -1,13 +1,15 @@
-package br.com.alura.minhasmusicas;
+package br.com.alura.minhasmusicas.principal;
 
+import br.com.alura.minhasmusicas.modelos.MinhasPreferidas;
 import br.com.alura.minhasmusicas.modelos.Musica;
 import br.com.alura.minhasmusicas.modelos.Podcast;
 
 public class App {
-    public static void main(String[] args) throws Exception {
+
+    public static void main(String[] args){
        
         Musica minhaMusica = new Musica();
-        minhaMusica.setTitulo("Forever");
+        minhaMusica.setTitulo ("Forever");
         minhaMusica.setCantor("Kiss");
 
         for (int i = 0; i < 1000; i++) {
@@ -17,8 +19,9 @@ public class App {
         for (int i = 0; i < 50; i++) {
             minhaMusica.curte();
         }
-
+ 
         Podcast meuPodcast = new Podcast();
+
         meuPodcast.setTitulo("BolhaDev");
         meuPodcast.setApresentador("Marcos Mendes");
 
@@ -29,5 +32,9 @@ public class App {
         for (int i = 0; i < 1000; i++) {
             meuPodcast.curte();
         }
-    }
+
+        MinhasPreferidas preferidas = new MinhasPreferidas();
+        preferidas.inclui(meuPodcast);
+        preferidas.inclui(minhaMusica);   
+     }
 }
